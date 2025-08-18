@@ -1,0 +1,39 @@
+.title {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+.amounte{
+    display: flex;
+    justify-content: space-between;
+}
+.amounte p {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+ }
+.col {
+    flex: 1;
+}
+.col p{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+}
+.qute {
+    font-size: 18px;
+    font-weight:700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 40px;
+}

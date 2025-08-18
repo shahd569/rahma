@@ -1,0 +1,16 @@
+.section {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.desc{
+    text-align: center;
+    color: var(--color-secondary);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.image {
+    border-radius: 20px;
+    margin-bottom: 50px;
+}

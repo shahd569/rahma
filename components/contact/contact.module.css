@@ -1,0 +1,75 @@
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.col1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.form{
+width: 450px;
+border-radius: 10px;
+background-color: rgba(180, 216, 245, 0.692);
+}
+.title {
+    color: #0a0a5a;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.input {
+    margin: 10px 20px;
+    width: 180px;
+    padding: 5px;
+    height: 45px;
+    border-radius: 10px;
+    text-align: right;
+    border:none;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+.message {
+    margin: 10px 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    width: 400px;
+}
+.button{
+    margin: 20px 175px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    width: 100px;
+    text-align: center;
+    background-color: #0a0a5a;
+    padding: 5px;   
+}
+.email{
+    width: 200px;
+    background-color: rgba(180, 216, 245, 0.692);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #0a0a5a;
+
+}
+.social {
+    width: 200px;
+    background-color: rgba(180, 216, 245, 0.692);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #0a0a5a;
+}
+.span {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}

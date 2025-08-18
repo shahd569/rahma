@@ -1,0 +1,64 @@
+.title {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold; 
+}
+.Type {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    gap: 80px;
+    margin-bottom: 40px;
+}
+.amounte{
+    display: flex;
+    justify-content: space-between;
+}
+.amounte p {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.parghraph {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom:40px;
+}
+.box {
+    text-align: center;
+    border: 1px solid #ccc;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.boxImage {
+    min-width: 100%;
+    height: 100%;
+}
+.info {
+    background-color: rgba(8, 8, 8, 0.308);
+    padding: 15px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 480px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+.box:hover .info {
+    left: 0;
+}
+.info p {
+    font-size: 24px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 10px;
+}

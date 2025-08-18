@@ -1,0 +1,98 @@
+.Profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+  background-color: rgba(180, 216, 245);
+  white-space: nowrap;
+}
+.form {
+  width: 450px;
+  margin-bottom: 40px;
+  margin-top: 50px;
+  white-space: none;
+}
+.marge {
+  position: relative;
+}
+.image {
+  position: absolute;
+  border-radius: 50%;
+  left: -50px;
+  top: -40px;
+  overflow: hidden;
+  border: 10px solid rgb(180, 216, 245);
+}
+.welcomeFaild {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slidein {
+  animation: slidein 0.8s ease;
+}
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.welcome {
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(to bottom, var(--color-primary), #3838a5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.name {
+  display: flex;
+}
+.failed {
+  background-color: white;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: none;
+}
+.icon {
+  position: absolute;
+  left: 20px;
+  font-size: larger;
+  color: var(--color-secondary);
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  background-color: #0a0a5a;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 45%;
+  height: 45px;
+  margin-top: 20px;
+}
+.rightIcon {
+  margin: 5px;
+}
+
+.Admin {
+  display: none;
+}

@@ -1,0 +1,38 @@
+.about {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.about h2 {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.row {
+  display: flex;
+  align-items: center;
+ }
+.col {
+    flex: 1;
+}
+.col p{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+}
+.qute {
+    font-size: 18px;
+    font-weight:700;
+    color: var(--color-primary);
+    text-align: center;
+}
+@media(max-width:768px){
+.image {
+display: none;
+}
+.col{
+    width: 100%;
+}
+}

@@ -1,0 +1,28 @@
+.container {
+    height: 200px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('/image/background.jpg');
+    background-size: cover;
+    padding-right: 100px;
+    z-index: 1;
+}
+.footer {
+        background-color: var(--color-primary);
+        height: 70px;
+        width: 100%;
+}
+.title {
+    color:#0a0a5a ;
+    font-size: 38px;
+    font-weight: bolder;
+}
+.desc {
+    font-size: 20px;
+    color: var(--color-secondary);
+}
+.special {
+    color: var(--color-primary);
+}

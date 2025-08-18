@@ -1,0 +1,14 @@
+.button {
+    color: white !important;
+    background-color: #0a0a5a;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    transition: 0.3s;
+    text-align: center;
+}
+@media(max-width:768px){
+    .button{
+        display: none;
+    }
+}

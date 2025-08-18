@@ -1,0 +1,23 @@
+.page {
+    margin-top: 50px;
+}
+.title {
+    direction: rtl;
+    color: rgb(76, 76, 253);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.card {
+    background-color: white;
+    margin: 20px;
+    padding: 25px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    direction: rtl;
+}
+.cards
+{ 
+    display: grid;
+     grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+}

@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model donation {
+  D_id           Int                      @id @default(autoincrement())
+  date           DateTime?                @db.Date
+  Bank           String                   @db.VarChar(45)
+  amount         Int
+  type           String                   @db.VarChar(45)
+  Userrr_id      Int
+  orphan_id      Int
+  payment_status donation_payment_status? @default(pending)
+  user           user                     @relation(fields: [Userrr_id], references: [U_id], onDelete: NoAction, map: "Userrr_id")
+  orphan         orphan                   @relation(fields: [orphan_id], references: [Orphan_id], onDelete: NoAction, map: "orphaaan_id")
+
+  @@index([type], map: "TypeDonation_idx")
+  @@index([Userrr_id], map: "U_id_idx")
+  @@index([orphan_id], map: "orphaaan_id")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model orphan {
+  Orphan_id     Int                   @id @default(autoincrement())
+  fname         String                @db.VarChar(100)
+  minit         String?               @db.VarChar(100)
+  lname         String                @db.VarChar(100)
+  picture       String?               @db.VarChar(255)
+  gender        String?               @db.Char(5)
+  Bdate         DateTime?             @db.Date
+  age           Int?
+  about         String?               @db.VarChar(200)
+  class         String?               @db.VarChar(45)
+  school        String?               @db.VarChar(45)
+  city          String?               @db.VarChar(45)
+  H_state       String?               @db.VarChar(250)
+  skills        String?               @db.VarChar(250)
+  F_M_status    String?               @db.VarChar(100)
+  Admin_id      Int                   @default(11111)
+  addition_date DateTime?             @db.Date
+  orphan_status orphan_orphan_status? @default(un_guaranteed)
+  donation      donation[]
+  sponsorship   sponsorship[]
+
+  @@index([Admin_id], map: "Admin_id_idx")
+  @@index([F_M_status], map: "F_M_Status_idx")
+}
+
+model sponsorship {
+  S_id      Int                  @id @default(autoincrement())
+  date      DateTime?            @db.Date
+  Bank      String               @db.VarChar(45)
+  p_type    sponsorship_p_type
+  sub_type  sponsorship_sub_type @default(monthly)
+  status    sponsorship_status   @default(pending)
+  U_id      Int
+  Orphan_id Int
+  orphan    orphan               @relation(fields: [Orphan_id], references: [Orphan_id], map: "orp_id")
+  user      user                 @relation(fields: [U_id], references: [U_id], map: "U_id")
+
+  @@index([p_type], map: "TypeSponsorship_idx")
+  @@index([Orphan_id], map: "Orp_id")
+  @@index([U_id], map: "U_id_idx")
+}
+
+model user {
+  U_id        Int           @id @default(autoincrement())
+  picture     Bytes?
+  email       String        @unique(map: "email_UNIQUE") @db.VarChar(200)
+  password    String        @db.VarChar(100)
+  ph_num      String        @unique(map: "ph_num_UNIQUE") @db.Char(20)
+  gender      String        @db.Char(5)
+  Bdate       DateTime      @db.Date
+  Address     String        @db.VarChar(45)
+  first_name  String        @db.VarChar(255)
+  last_name   String        @db.VarChar(255)
+  role        String        @default("user") @db.VarChar(20)
+  donation    donation[]
+  sponsorship sponsorship[]
+}
+
+model communication {
+  Msg_id     Int      @id @default(autoincrement())
+  content    String   @db.VarChar(200)
+  date       DateTime @db.DateTime(0)
+  IsRead     Int      @default(0) @db.TinyInt
+  first_name String   @db.VarChar(100)
+  last_name  String   @db.VarChar(100)
+  email      String   @db.VarChar(200)
+  phone      String?  @db.Char(20)
+
+  @@index([IsRead], map: "IsRead_Msg_idx")
+  @@index([phone], map: "phone_user_idx")
+  @@index([email], map: "user_email_idx")
+}
+
+enum sponsorship_p_type {
+  normal
+  eductional
+}
+
+enum sponsorship_sub_type {
+  monthly
+  yearly
+}
+
+enum sponsorship_status {
+  pending
+  approved
+  rejected
+  canceled
+}
+
+enum donation_payment_status {
+  pending
+  confirmed
+  rejected
+}
+
+enum orphan_orphan_status {
+  guaranteed
+  un_guaranteed
+}

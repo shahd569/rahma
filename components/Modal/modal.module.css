@@ -1,0 +1,25 @@
+.modal {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    border: 7px solid rgb(252, 165, 180);
+    position: relative;
+    height: 500px;
+}
+.title {
+   text-align: center;
+    color:#0a0a5a ;
+    margin: 20px;  
+    font-weight: 600;
+}
+.button{
+    margin-top: 10px;
+    position: absolute;
+    left: 15px;
+    bottom: 5px;
+    background-color: red;
+}
+.button:hover {
+    background-color: rgb(255, 0, 0);
+}

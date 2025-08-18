@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model admin {
+  A_id          Int             @id @default(11111)
+  Aname         String          @db.VarChar(45)
+  pichure       Bytes?          @db.MediumBlob
+  Bdate         DateTime?       @db.Date
+  gender        String?         @db.Char(5)
+  email         String          @unique(map: "email_UNIQUE") @db.VarChar(200)
+  password      String          @db.VarChar(45)
+  ph_num        String          @unique(map: "ph_num_UNIQUE") @db.VarChar(15)
+  Address       String?         @db.VarChar(100)
+  S_num         String          @db.Char(5)
+  communication communication[]
+  orphan        orphan[]
+}
+
+model communication {
+  Msg_id    Int    @id
+  content   String @db.VarChar(200)
+  date      String @db.VarChar(45)
+  IsRead    Int    @default(0) @db.TinyInt
+  Admain_id Int
+  User_id   Int
+  admin     admin  @relation(fields: [Admain_id], references: [A_id], onDelete: NoAction, map: "Admin_id")
+  user      user   @relation(fields: [User_id], references: [U_id], onDelete: NoAction, map: "User_id")
+
+  @@index([Admain_id], map: "Admin_id_idx")
+  @@index([IsRead], map: "IsRead_Msg_idx")
+  @@index([User_id], map: "User_id_idx")
+}
+
+model donation {
+  D_id      Int       @id
+  date      DateTime? @db.Date
+  Bank      String    @db.VarChar(45)
+  amount    Int
+  type      String    @db.VarChar(45)
+  Userrr_id Int
+  orphan_id Int
+  user      user      @relation(fields: [Userrr_id], references: [U_id], onDelete: NoAction, onUpdate: NoAction, map: "Userrr_id")
+  orphan    orphan    @relation(fields: [orphan_id], references: [Orphan_id], onDelete: NoAction, onUpdate: NoAction, map: "orphaan_id")
+
+  @@index([orphan_id], map: "ORPHAN_id_idx")
+  @@index([type], map: "TypeDonation_idx")
+  @@index([Userrr_id], map: "U_id_idx")
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model orphan {
+  Orphan_id   Int           @id
+  Oname       String        @db.VarChar(100)
+  pichure     Bytes?        @db.MediumBlob
+  gender      String?       @db.Char(5)
+  Bdate       DateTime?     @db.Date
+  age         Int?
+  about       String?       @db.VarChar(200)
+  class       String?       @db.VarChar(45)
+  school      String?       @db.VarChar(45)
+  city        String?       @db.VarChar(45)
+  H_state     String?       @db.VarChar(250)
+  skills      String?       @db.VarChar(250)
+  ph_num      String        @unique(map: "ph_num_UNIQUE") @db.VarChar(15)
+  F_M_status  String?       @db.VarChar(100)
+  A_id        Int           @default(11111)
+  donation    donation[]
+  admin       admin         @relation(fields: [A_id], references: [A_id], onDelete: NoAction, map: "A_id")
+  sponsorship sponsorship[]
+
+  @@index([A_id], map: "A_id_idx")
+  @@index([F_M_status], map: "F_M_Status_idx")
+}
+
+model sponsorship {
+  is_active Int       @default(1) @db.TinyInt
+  date      DateTime? @db.Date
+  Bank      String    @db.VarChar(45)
+  amount    Int
+  p_type    String    @db.VarChar(45)
+  sub_type  String    @db.VarChar(45)
+  U_id      Int
+  Orphan_id Int
+  orphan    orphan    @relation(fields: [Orphan_id], references: [Orphan_id], onDelete: NoAction, onUpdate: NoAction, map: "Orp_id")
+  user      user      @relation(fields: [U_id], references: [U_id], onDelete: NoAction, onUpdate: NoAction, map: "U_id")
+
+  @@id([U_id, Orphan_id])
+  @@index([Orphan_id], map: "Orphan_id_idx")
+  @@index([p_type], map: "TypeSponsorship_idx")
+}
+
+model user {
+  U_id          Int             @id @default(0)
+  Uname         String          @db.VarChar(45)
+  pichure       Bytes?          @db.MediumBlob
+  email         String          @unique(map: "email_UNIQUE") @db.VarChar(200)
+  password      String          @db.VarChar(45)
+  ph_num        String          @unique(map: "ph_num_UNIQUE") @db.VarChar(15)
+  gender        String?         @db.Char(5)
+  Bdate         DateTime?       @db.Date
+  Address       String?         @db.VarChar(45)
+  communication communication[]
+  donation      donation[]
+  sponsorship   sponsorship[]
+}

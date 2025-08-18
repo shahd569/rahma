@@ -1,0 +1,12 @@
+.table {
+    direction: rtl;
+    border-collapse: collapse;
+    background-color: #fff;
+    
+}
+.scroll {
+    width: 800px;
+    overflow-y:auto;
+    overflow-x: auto;
+    margin-top: 40px;
+}
