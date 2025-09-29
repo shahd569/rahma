@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
-  background-color: rgba(180, 216, 245);
+  background-color: rgb(233,241,252);
   white-space: nowrap;
 }
 .form {
@@ -20,7 +20,7 @@
   left: -50px;
   top: -40px;
   overflow: hidden;
-  border: 10px solid rgb(180, 216, 245);
+  border: 10px solid rgb(233,241,252);
 }
 .welcomeFaild {
   background-color: white;

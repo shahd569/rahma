@@ -1,0 +1,35 @@
+.orphan{
+    width: 100%;
+    margin: 40px;
+}
+.cards {
+    display: grid;
+    grid-template-columns:  repeat(auto-fill,minmax(150px,1fr));
+    gap: 20px;
+}
+.card{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px  #bcd4f8;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    scale: 1.01;
+}
+.image {
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.name {
+    color: #0a0a5a;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.button {
+    display: flex;
+}

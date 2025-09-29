@@ -72,9 +72,12 @@ export default function Offcanvas1() {
           ) : (
             !loading && <p>لا يوجد تبرعات للعرض</p>
           )}
+          <hr></hr>
+          <div className={Styles.add}>
           <Link href={"/donations"}>
             <button className={Styles.cardButton}>إضافة تبرع جديد</button>
           </Link>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>

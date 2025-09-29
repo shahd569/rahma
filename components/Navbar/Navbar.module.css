@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(240, 227, 227);
-    margin-bottom: 70px;
     margin-top: 0;
     position: relative;
 }
@@ -82,4 +81,17 @@
     font-size:24px;
     font-weight: bold;
     color: var(--color-secondary);
+}
+.profile {
+    border-radius: 50%;
+    border: 2px solid #0a0a5a;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profileIcon{
+    font-size: 28px;
+    color: #0a0a5a;
 }

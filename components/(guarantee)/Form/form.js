@@ -76,6 +76,7 @@ const SponsershipForm = () => {
         </select>
 
         <select
+        className={Styles.select}
           value={p_type}
           onChange={(e) => setP_type(e.target.value)}
           required
@@ -86,6 +87,7 @@ const SponsershipForm = () => {
         </select>
 
         <select
+        className={Styles.select}
           value={sub_type}
           onChange={(e) => setSub_type(e.target.value)}
           required

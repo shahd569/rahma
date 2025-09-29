@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Styles from "./donation.module.css";
+import Type0 from "@/public/image/Ellipse 1.png"
 import Type1 from "@/public/image/type1.png";
 import Type2 from "@/public/image/type2.png";
 import Type3 from "@/public/image/type3.png";
@@ -17,7 +18,7 @@ export default function Donation() {
         >
           <Image
             className={Styles.image}
-            src={Type1}
+            src={Type0}
             alt="type1"
             width={200}
             height={200}

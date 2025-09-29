@@ -1,5 +1,6 @@
 .page {
     margin-top: 50px;
+    direction: rtl;
 }
 .title {
     direction: rtl;
@@ -12,6 +13,7 @@
     background-color: white;
     margin: 20px;
     padding: 25px;
+    border: 3px solid rgb(95, 159, 255);
     border-bottom-left-radius: 50px;
     border-top-right-radius: 50px;
     direction: rtl;
@@ -20,4 +22,16 @@
 { 
     display: grid;
      grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+      margin: 20px;
+}
+.buttonGroup {
+    display: flex;
+    justify-content: space-between;
+}
+.button {
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(34, 143, 34);
+    color: white;
+    padding: 10px;
 }

@@ -9,4 +9,12 @@
     overflow-y:auto;
     overflow-x: auto;
     margin-top: 40px;
+    height: 600px;
+}
+.scrollDonation {
+    width: 800px;
+    height: 700px;
+    overflow-y:auto;
+    overflow-x: auto;
+    margin-top: 40px;
 }

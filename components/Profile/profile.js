@@ -1,18 +1,14 @@
 "use client";
-// pages/profile.js
 import { useEffect, useState, useRef } from "react";
 import { useSession } from "next-auth/react";
 import {
-  // faCalendar,
   faCalendarAlt,
   faEdit,
   faEnvelope,
-  // faMailBulk,
   faPhone,
   faSave,
   faUser,
   faVenus,
-  // faVoicemail,
 } from "@fortawesome/free-solid-svg-icons";
 import { faMars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -80,7 +76,6 @@ const Profile = () => {
     const formData = new FormData();
     formData.append("image", file);
 
-    // رفع الصورة للسيرفر
     const res = await fetch("/api/profile/profile-image", {
       method: "POST",
       body: formData,

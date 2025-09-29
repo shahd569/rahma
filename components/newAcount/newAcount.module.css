@@ -9,6 +9,7 @@
     margin: 50px;
     padding: 10px;
     border-radius: 15px;
+    background-color: white;
     box-shadow: 3px 3px 3px 3px var(--color-primary);
 }
 .input{

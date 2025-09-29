@@ -1,12 +1,13 @@
 .container {
-    height: 200px;
+    /* height: 200px; */
     font-size: 14px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-image: url('/image/background.jpg');
     background-size: cover;
     padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     z-index: 1;
 }
 .footer {
@@ -25,4 +26,26 @@
 }
 .special {
     color: var(--color-primary);
+}
+.social {
+    width: 180px;
+    display: flex;
+    justify-content: space-between
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    height: 35px;
+    width: 35px;
+    color:#0a0a5a;
+    /* background-color: #0a0a5a; */
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.bankNme {
+    color: #0a0a5a;
+    font-weight: 500;
 }

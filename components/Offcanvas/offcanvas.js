@@ -73,6 +73,7 @@ export default function Offcanvas1() {
                     <p> الحالة: {sponsorship.status}</p>
                   </li>
                   <button
+                  className={Styles.cancelButton}
                     onClick={async () => {
                       try {
                         const res = await fetch(
@@ -104,9 +105,12 @@ export default function Offcanvas1() {
           ) : (
             !loading && <p>لا يوجد كفالات للعرض</p>
           )}
+          <hr></hr>
+          <div className={Styles.add}>
           <Link href={"/sponsorship"}>
-            <button className={Styles.cardButton}>إضافة كفالة جديدة</button>
+              <button className={Styles.cardButton}>إضافة كفالة جديدة</button>
           </Link>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>

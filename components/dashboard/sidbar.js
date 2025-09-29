@@ -1,10 +1,19 @@
 import Link from "next/link";
 import Styles from "./sidbar.module.css";
+import Image from "next/image";
+import Profile2 from "@/public/image/Ellipse 3 (1).png"
+
 // import Home from "./home"
 export default function admin() {
   return (
     <div className={Styles.page}>
       <div className={Styles.sidbar}>
+        <Image
+        className={Styles.Image}
+        src={Profile2}
+        width={200}
+        height={200}
+        alt="admin"></Image>
         <h3 className={Styles.title}>Hady</h3>
         <ul>
           <li>
@@ -23,18 +32,17 @@ export default function admin() {
             </Link>
           </li>
           <li>
-            <Link className={Styles.list} href={""}>
-              الرسائل
+            <Link className={Styles.list} href={"/orphanView"}>
+              إدارة الأيتام 
             </Link>
           </li>
           <li>
-            <Link className={Styles.list} href={""}>
-              إدارة المستخدمين
+            <Link className={Styles.list} href={"/DonationView"}>
+              التبرعات
             </Link>
           </li>
         </ul>
       </div>
-      {/* <Home></Home> */}
-    </div>
+       </div>
   );
 }

@@ -4,9 +4,10 @@
     align-items: center;
     gap: 100px;
     }   
-    .row {
-        display: flex;
-      align-items: center;
+.row {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
     }
 @media(max-width:768px){
     .row {

@@ -37,7 +37,7 @@ export default function Offcanvas1() {
             sponsorAge: user.age,
             sponsorAddress: user.address,
             sponsorGender: user.gender,
-            sponsorshipId: orphan.S_id, // تأكد من أن لكل كفالة id
+            sponsorshipId: orphan.S_id, 
           };
         });
 
@@ -67,7 +67,7 @@ export default function Offcanvas1() {
         throw new Error("فشل في تحديث حالة الكفالة");
       }
 
-      // حذف الكفالة من الواجهة بعد نجاح التحديث
+      
       setSponsorships((prev) => prev.filter((s) => s.sponsorshipId !== id));
     } catch (err) {
       alert(err.message);
@@ -76,7 +76,7 @@ export default function Offcanvas1() {
 
   return (
     <div className={Styles.page}>
-      <h2 className={Styles.title}>الكفالات</h2>
+      <h2 className={Styles.title}> الكفالات الجديدة </h2>
       {loading && <div>جاري تحميل البيانات...</div>}
       {error && <div style={{ color: "red" }}>حدث خطأ: {error}</div>}
 
@@ -93,23 +93,23 @@ export default function Offcanvas1() {
                 </p>
                 <p>نوع الكفالة: {item.type}</p>
                 <p>اسم البنك: {item.sponsorBank}</p>
-                <Modal sponsor={item} />
               </li>
 
               <div className={Styles.buttonGroup}>
+                <Modal sponsor={item} />
                 <button
+                className={Styles.button}
                   onClick={() => handleAction(item.sponsorshipId, "approved")}
                 >
                   قبول الكفالة
                 </button>
 
                 <button
+                className={Styles.button}
+                style={{backgroundColor:'red'}}
                   onClick={() => handleAction(item.sponsorshipId, "rejected")}
                 >
                   رفض الكفالة
-                </button>
-                <button onClick={() => alert("إلغاء الكفالة")}>
-                  إلغاء الكفالة
                 </button>
               </div>
             </div>

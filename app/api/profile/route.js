@@ -2,7 +2,6 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { NextResponse } from "next/server";
-// import { hash } from "bcrypt";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -47,7 +46,6 @@ export async function POST(req) {
   const Address = formData.get("Address");
   const first_name = formData.get("first_name");
   const last_name = formData.get("last_name");
-  // const newPassword = formData.get("password");
 
   try {
     const updateData = {
@@ -58,15 +56,6 @@ export async function POST(req) {
       first_name,
       last_name,
     };
-
-    // if (
-    //   newPassword &&
-    //   typeof newPassword == "string" &&
-    //   newPassword.trim() !== ""
-    // ) {
-    //   const hashedPassword = await hash(newPassword, 10);
-    //   updateData.password = hashedPassword;
-    // }
 
     const updatedUser = await prisma.user.update({
       where: { email: session.user.email },

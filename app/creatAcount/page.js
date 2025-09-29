@@ -1,6 +1,8 @@
 import Account from '@/components/newAcount/newAcount'
 export default function newAccount() {
     return (
-       <Account /> 
+       <div style={{backgroundColor: "rgb(233,241,252)"}}>
+        <Account /> 
+       </div>
     )
 }

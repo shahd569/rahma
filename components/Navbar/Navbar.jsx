@@ -9,6 +9,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import {faBars} from "@fortawesome/free-solid-svg-icons"
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Navbar() {
@@ -46,6 +47,11 @@ export default function Navbar() {
              ))}
          </div>
       )}
+      <div className={Styles.profile}>
+      <Link href={'/profile'}>
+        <FontAwesomeIcon icon={faUser} className={Styles.profileIcon} />
+      </Link>
+      </div>
         <Button />
        </div>
         </header>

@@ -1,0 +1,19 @@
+.title {
+    margin-left: 280px;
+    font-weight: bolder;
+    color: rgb(76, 76, 253);;
+}
+.label {
+    margin: 10px;
+    width: 350px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: right;
+    border:none;
+    font-size: 16px;
+    background-color: rgb(203, 239, 248);
+    border: 1px solid #ccc;
+}
+.girl {
+    background-color: rgb(255, 214, 221);
+}
