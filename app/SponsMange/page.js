@@ -1,5 +1,5 @@
 import Sidbar from "@/components/dashboard/sidbar";
-import Table from "@/components/dashboard/SponsorshipMange";
+import Table from "@/components/dashboard/sponsorshipMange";
 import Cards from "@/components/dashboard/card";
 export default function SponsMange() {
   return (
