@@ -138,13 +138,13 @@ const OrphansCarousel = () => {
 
               <div className={Styles.button}>
                 <Modal orphan={orphan} />
-                <button
+                {/* <button
                   className="bg-red-500 text-white px-3 py-1 rounded-md ml-2 hover:bg-red-600"
                   onClick={() => handleDelete(orphan.Orphan_id)}
                 >
                   {" "}
                   حذف
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
